@@ -7,13 +7,13 @@ This is a Solidity program that simulates a creditor loaning of wei to a debtor.
 This program is a contract written in Solidity, an object-oriented programming language typically used for developing smart contracts on various blockchain platforms such as ethereum. This contract creates an ERC20 token and simulates some possible transactions with the ERC20 standard. ERC20 is a standard used to create tokens. It makes it easier for different tokens to be exchanged for one another on the ethereum network.
 
 This contract has a modifier called onlyOwner which only allows the contract owner to access the mint function. The rest of the functions are accessible by any user. The contract has the following functions: 
-* **approve** - takes the address of the of a spender as well as an amount of type uint which will serve as an allowance of the spender which will be deducted from the owner's(function caller's) balance as arguments.
+* **approve** - takes the address of the of a spender as well as an amount of type uint256 which will serve as an allowance of the spender which will be deducted from the owner's(function caller's) balance as arguments.
 * **allowance** - takes the allowance provider's address and the address of the spender as arguments to return the allowance amount that can be spent by the spender.
-* **transferFrom** - takes a from-address, a to-address, and an amount that will be transfered to the to-address as arguments. This can only work if the person who owns the from-address or a spender that was give an allowance to spend in their stead uses this function call.
+* **transferFrom** - takes a from-address, a to-address, and an amount of type uint256 that will be transfered to the to-address as arguments. This can only work if the person who owns the from-address or a spender that was give an allowance to spend in their stead uses this function call.
 
-* **mint** - takes a receiving address as well an amount to be minted as arguments, mints that amount. The totalSupply is updated as a consequence.
-* **burn** - takes an amount to be burned as an argument and burns that amount of tokens from the function caller's balance.
-* **transfer** - takes a to-address and an amount as an argument and transfers that amount of tokens to the to-addressee's balance.
+* **mint** - takes a receiving address as well an amount of type uint256 to be minted as arguments, mints that amount. The totalSupply is updated as a consequence.
+* **burn** - takes an amount of type uint256 to be burned as an argument and burns that amount of tokens from the function caller's balance.
+* **transfer** - takes a to-address and an amount of type uint256 as an argument and transfers that amount of tokens to the to-addressee's balance.
 * **balanceOf** - takes an address as an argument and returns the balance of that address.
 * **totalSupply** - returns the totalSupply of tokens.
 * **name** - returns the name of the token.
