@@ -4,14 +4,14 @@ This is a Solidity program that simulates a creditor loaning of wei to a debtor.
 
 ## Description
 
-This program is a contract written in Solidity, an object-oriented programming language typically used for developing smart contracts on various blockchain platforms such as ethereum. This contract simulates some possible transactions within an ERC20 token upon creation. 
+This program is a contract written in Solidity, an object-oriented programming language typically used for developing smart contracts on various blockchain platforms such as ethereum. This contract creates an ERC20 token and simulates some possible transactions with the ERC20 standard. ERC20 is a standard used to create tokens. It makes it easier for different tokens to be exchanged for one another on the ethereum network.
 
 This contract has a modifier called onlyOwner which only allows the contract owner to access the mint function. The rest of the functions are accessible by any user. The contract has the following functions: 
 * **approve** - takes the address of the of a spender as well as an amount of type uint which will serve as an allowance of the spender which will be deducted from the owner's(function caller's) balance as arguments.
 * **allowance** - takes the allowance provider's address and the address of the spender as arguments to return the allowance amount that can be spent by the spender.
 * **transferFrom** - takes a from-address, a to-address, and an amount that will be transfered to the to-address as arguments. This can only work if the person who owns the from-address or a spender that was give an allowance to spend in their stead uses this function call.
 
-* debtorCooldownStatus - returns the cooldown of the debtor associated the user-inputted _debtorId of type unsigned integer.
+* **mint** - takes a receiving address as well an amount to be minted 
 * resetCooldown - sets the debtorOnCooldown status of the debtor associated with the user-inputted debtorId of type unsigned integer back to false thus allowing that debtor to take another loan.
 * triggerAssert - increments the transactionFee state variable to trigger the assert statement that assumes it never changes to demonstrate the function of assert.
 * viewTransactionFee - returns the current value of the state variable transactionFee.
