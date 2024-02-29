@@ -11,24 +11,21 @@ This contract has a modifier called onlyOwner which only allows the contract own
 * **allowance** - takes the allowance provider's address and the address of the spender as arguments to return the allowance amount that can be spent by the spender.
 * **transferFrom** - takes a from-address, a to-address, and an amount that will be transfered to the to-address as arguments. This can only work if the person who owns the from-address or a spender that was give an allowance to spend in their stead uses this function call.
 
-* **mint** - takes a receiving address as well an amount to be minted 
-* resetCooldown - sets the debtorOnCooldown status of the debtor associated with the user-inputted debtorId of type unsigned integer back to false thus allowing that debtor to take another loan.
-* triggerAssert - increments the transactionFee state variable to trigger the assert statement that assumes it never changes to demonstrate the function of assert.
-* viewTransactionFee - returns the current value of the state variable transactionFee.
-* resetTransactionFee - sets the transactionFee back to its default value of 10.
-
-This contract uses the following error handling functions:
-
-* **require** - prevents any code below it if the conditional statement contained within the require function is not met. It has an optional message parameter to provide further context. Typically used for input validation.
-* **assert** - similar to require it also contains a conditional statement within it but has no mmessage parameter and is typically used for debugging making sure that developer has not written code that changed something within the program that it should not have. If an assert is triggered a revert will occur which reverses any changes done to the state of the contract.
-* **revert** - reverses any changes done to the state of the contract. Typically contained within a conditional statement and if the conditonal statement returns true, the revert statement is triggered. 
+* **mint** - takes a receiving address as well an amount to be minted as arguments, mints that amount. The totalSupply is updated as a consequence.
+* **burn** - takes an amount to be burned as an argument and burns that amount of tokens from the function caller's balance.
+* **transfer** - takes a to-address and an amount as an argument and transfers that amount of tokens to the to-addressee's balance.
+* **balanceOf** - takes an address as an argument and returns the balance of that address.
+* **totalSupply** - returns the totalSupply of tokens.
+* **name** - returns the name of the token.
+* **symbol** - returns the symbol of the token.
+* **decimals** - returns the decimals conversion factor of the token. Typically the value being used is 10^18.
 
 ## Getting Started
 
 ### Executing program
 
 In order to run this program, you can use Remix, an online Solidity IDE which I used to develop this contract. For starters, please go to the Remix website at https://remix.ethereum.org/.
-Upon reaching the website, create a new file by clicking the "New File" button around the center of the website or the button that looks like a piece of paper with the top right corner folded found on the top left corner of the website under workspaces. Save the file under the file name of your choice while making sure to use the .sol extension (e.g. ErrorHandling.sol). Copy and then paste the following code into the file you have just created:
+Upon reaching the website, create a new file by clicking the "New File" button around the center of the website or the button that looks like a piece of paper with the top right corner folded found on the top left corner of the website under workspaces. Save the file under the file name of your choice while making sure to use the .sol extension (e.g. ERC20Assessment.sol). Copy and then paste the following code into the file you have just created:
 
 
 ```Solidity
