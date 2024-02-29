@@ -4,7 +4,7 @@ This is a Solidity program that simulates a creditor loaning of wei to a debtor.
 
 ## Description
 
-This program is a contract written in Solidity, an object-oriented programming language typically used for developing smart contracts on various blockchain platforms such as ethereum. This contract creates an ERC20 token and simulates some possible transactions with the ERC20 standard. ERC20 is a standard used to create tokens. It makes it easier for different tokens to be exchanged for one another on the ethereum network. For more information here is the doc for ERC20 by openzeppelin: https://docs.openzeppelin.com/contracts/4.x/erc20.
+This program is a contract written in Solidity, an object-oriented programming language typically used for developing smart contracts on various blockchain platforms such as ethereum. This contract creates an ERC20 token and simulates some possible transactions with the ERC20 standard. ERC20 is a standard used to create tokens. It makes it easier for different tokens to be exchanged for one another on the ethereum network. For more information, here is the doc for ERC20 by openzeppelin: https://docs.openzeppelin.com/contracts/4.x/erc20.
 
 This contract has a modifier called onlyOwner which only allows the contract owner to access the mint function. The rest of the functions are accessible by any user. The contract has the following functions: 
 * **approve** - takes the address of the of a spender as well as an amount of type uint256 which will serve as an allowance of the spender which will be deducted from the owner's(function caller's) balance as arguments.
