@@ -81,13 +81,18 @@ After the contract has been compiled, you can now deploy the contract by clickin
 
 ### Post Contract Deployment
 After the contract has been deployed, the contract will be found under "Deployed Contracts". Expand it by clicking the ">" button below "Deployed Contracts". You should see the following buttons: 
-* sendLoan - sends a _loanAmount of type unsigned integer to a debtor associated with the user-inputted debtorId of type unsigned integer and sets that debtor's debtorOnCooldown status to true preventing that debtor from receiving any more loans. 
-* getCreditorBalance - returns the creditor's current balance. 
-* getDebtorBalance - returns the balance of the debtor associated the user-inputted _debtorId of type unsigned integer. 
-* debtorCooldownStatus - returns the cooldown of the debtor associated the user-inputted _debtorId of type unsigned integer.
-* resetCooldown - sets the debtorOnCooldown status of the debtor associated with the user-inputted _debtorId of type unsigned integer back to false thus allowing that debtor to take another loan.
-* triggerAssert - increments the transactionFee state variable to trigger the assert statement that assumes it never changes to demonstrate the function of assert.
-* viewTransactionFee - returns the current value of the state variable transactionFee.
+* **approve** - takes the address of the of a spender as well as an amount of type uint256 which will serve as an allowance of the spender which will be deducted from the owner's(function caller's) balance as arguments.
+* **allowance** - takes the allowance provider's address and the address of the spender as arguments to return the allowance amount that can be spent by the spender.
+* **transferFrom** - takes a from-address, a to-address, and an amount of type uint256 that will be transfered to the to-address as arguments. This can only work if the person who owns the from-address or a spender that was give an allowance to spend in their stead uses this function call.
+
+* **mint** - takes a receiving address as well an amount of type uint256 to be minted as arguments, mints that amount. The totalSupply is updated as a consequence.
+* **burn** - takes an amount of type uint256 to be burned as an argument and burns that amount of tokens from the function caller's balance.
+* **transfer** - takes a to-address and an amount of type uint256 as an argument and transfers that amount of tokens to the to-addressee's balance.
+* **balanceOf** - takes an address as an argument and returns the balance of that address.
+* **totalSupply** - returns the totalSupply of tokens.
+* **name** - returns the name of the token.
+* **symbol** - returns the symbol of the token.
+* **decimals** - returns the decimals conversion factor of the token. Typically the value being used is 10^18.
 
 These buttons correspond to each of the functions within the contract.
 The sendLoan, getDebtorBalance, debtorCooldownStatus, and resetCooldown have input fields beside them.
