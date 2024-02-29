@@ -94,6 +94,7 @@ After the contract has been deployed, the contract will be found under "Deployed
 * **name** - returns the name of the token.
 * **symbol** - returns the symbol of the token.
 * **decimals** - returns the decimals conversion factor of the token. Typically the value being used is 10^18.
+* **displayOwner** - this custom function and a not imported from the ERC20.sol contract. It returns the address of the owner of the contract. As an alternative you can use Ownable.sol by openzeppelin who also made ERC20. You can refer to this doc by openzeppelin for more information: https://docs.openzeppelin.com/contracts/2.x/access-control
 
 These buttons correspond to each of the functions within the contract.
 The sendLoan, getDebtorBalance, debtorCooldownStatus, and resetCooldown have input fields beside them.
