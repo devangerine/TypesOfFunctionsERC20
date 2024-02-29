@@ -1,13 +1,13 @@
 # TypesOfFunctionsERC20
 
-This is a Solidity program that simulates a creditor loaning of wei to a debtor. The purpose of this program is showcase my current understanding of Solidity as a programming language (the usage of modifiers as well as error handling functions namely: require, assert, and revert) as well as serve as a referrence to those who are studying Solidity like me. 
+This is a Solidity program that simulates a creditor loaning of wei to a debtor. The purpose of this program is showcase my current understanding of Solidity as a programming language (the creation of an ERC20 token and the use of its functions) as well as serve as a referrence to those who are studying Solidity like me. 
 
 ## Description
 
-This program is a contract written in Solidity, an object-oriented programming language typically used for developing smart contracts on various blockchain platforms such as ethereum. This contract has you act as a creditor giving a loans to debtors. The debtor pays for a transaction fee in this transaction. 
+This program is a contract written in Solidity, an object-oriented programming language typically used for developing smart contracts on various blockchain platforms such as ethereum. This contract simulates some possible transactions within an ERC20 token upon creation. 
 
-This contract has a modifier called onlyCreditor which only allows the creditor to access the contract's functions. This modifier to applied to all of the functions within this contract. The contract has the following functions: 
-* sendLoan - sends a _loanAmount of type unsigned integer to a debtor associated with the user-inputted debtorId of type unsigned integer and sets that debtor's debtorOnCooldown status to true preventing that debtor from taking any more loans. 
+This contract has a modifier called onlyOwner which only allows the owner to access the mint function. The rest of the functions are accessible by any user. The contract has the following functions: 
+* approve - takes an address of the of a spender as an argument as well as an amount of type uint which will serve as an allowance of the spender which will be deducted from the owner's(function caller's) balance.
 * getCreditorBalance - returns the creditor's current balance. 
 * getDebtorBalance - returns the balance of the debtor associated the user-inputted _debtorId of type unsigned integer. 
 * debtorCooldownStatus - returns the cooldown of the debtor associated the user-inputted _debtorId of type unsigned integer.
