@@ -7,8 +7,8 @@ This is a Solidity program that simulates a creditor loaning of wei to a debtor.
 This program is a contract written in Solidity, an object-oriented programming language typically used for developing smart contracts on various blockchain platforms such as ethereum. This contract simulates some possible transactions within an ERC20 token upon creation. 
 
 This contract has a modifier called onlyOwner which only allows the owner to access the mint function. The rest of the functions are accessible by any user. The contract has the following functions: 
-* approve - takes an address of the of a spender as an argument as well as an amount of type uint which will serve as an allowance of the spender which will be deducted from the owner's(function caller's) balance.
-* getCreditorBalance - returns the creditor's current balance. 
+* approve - takes the address of the of a spender as well as an amount of type uint which will serve as an allowance of the spender which will be deducted from the owner's(function caller's) balance as arguments.
+* transferFrom - takes a from-address, a to-address, and an amount that will be transfered to the to-address as arguments. This can only work if the person who owns the from-address or a spender that was give an allowance to spend in their stead uses this function call.
 * getDebtorBalance - returns the balance of the debtor associated the user-inputted _debtorId of type unsigned integer. 
 * debtorCooldownStatus - returns the cooldown of the debtor associated the user-inputted _debtorId of type unsigned integer.
 * resetCooldown - sets the debtorOnCooldown status of the debtor associated with the user-inputted debtorId of type unsigned integer back to false thus allowing that debtor to take another loan.
