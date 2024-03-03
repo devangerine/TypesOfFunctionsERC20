@@ -8,8 +8,8 @@ This program is a contract written in Solidity, an object-oriented programming l
 
 This contract has a modifier called onlyOwner which only allows the contract owner to access the mint function. The rest of the functions are accessible by any user. The contract has the following functions: 
 * **approve** - takes the address of the of a spender as well as an amount of type uint256 which will serve as an allowance of the spender which will be deducted from the owner's(function caller's) balance as arguments.
-* **allowance** - takes the allowance provider's address and the address of the spender as arguments to return the allowance amount that can be spent by the spender.
-* **transferFrom** - takes a from-address, a to-address, and an amount of type uint256 that will be transfered to the to-address as arguments. This can only work if the person who owns the from-address or a spender that was give an allowance to spend in their stead uses this function call.
+* **allowance** - takes the allowance provider's address and the address of the spender as arguments to return the allowance amount that can be spent by the spender from the allowance provider's balance.
+* **transferFrom** - takes a from-address, a to-address, and an amount of type uint256 that will be transfered to the to-address as arguments. This can only work if the person who owns the from-address or a spender that was give an allowance to spend in their stead calls this function.
 
 * **mint** - takes a receiving address as well an amount of type uint256 to be minted as arguments, mints that amount. The totalSupply is updated as a consequence.
 * **burn** - takes an amount of type uint256 to be burned as an argument and burns that amount of tokens from the function caller's balance.
@@ -19,7 +19,7 @@ This contract has a modifier called onlyOwner which only allows the contract own
 * **name** - returns the name of the token.
 * **symbol** - returns the symbol of the token.
 * **decimals** - returns the decimals conversion factor of the token. Typically the value being used is 10^18.
-* **displayOwner** - this custom function and a not imported from the ERC20.sol contract. It returns the address of the owner of the contract. As an alternative you can use Ownable.sol by openzeppelin who also made ERC20. You can refer to this doc by openzeppelin for more information: https://docs.openzeppelin.com/contracts/2.x/access-control
+* **displayOwner** - this is a custom function and a not imported from the ERC20.sol contract. It returns the address of the owner of the contract. As an alternative, you can use Ownable.sol by openzeppelin who also made ERC20. You can refer to this doc by openzeppelin for more information: https://docs.openzeppelin.com/contracts/2.x/access-control.
 
 ## Getting Started
 
@@ -83,8 +83,8 @@ After the contract has been compiled, you can now deploy the contract by clickin
 ### Post Contract Deployment
 After the contract has been deployed, the contract will be found under "Deployed Contracts". Expand it by clicking the ">" button below "Deployed Contracts". You should see the following buttons: 
 * **approve** - takes the address of the of a spender as well as an amount of type uint256 which will serve as an allowance of the spender which will be deducted from the owner's(function caller's) balance as arguments.
-* **allowance** - takes the allowance provider's address and the address of the spender as arguments to return the allowance amount that can be spent by the spender.
-* **transferFrom** - takes a from-address, a to-address, and an amount of type uint256 that will be transfered to the to-address as arguments. This can only work if the person who owns the from-address or a spender that was give an allowance to spend in their stead uses this function call.
+* **allowance** - takes the allowance provider's address and the address of the spender as arguments to return the allowance amount that can be spent by the spender from the allowance provider's balance.
+* **transferFrom** - takes a from-address, a to-address, and an amount of type uint256 that will be transfered to the to-address as arguments. This can only work if the person who owns the from-address or a spender that was give an allowance to spend in their stead calls this function.
 
 * **mint** - takes a receiving address as well an amount of type uint256 to be minted as arguments, mints that amount. The totalSupply is updated as a consequence.
 * **burn** - takes an amount of type uint256 to be burned as an argument and burns that amount of tokens from the function caller's balance.
@@ -94,20 +94,24 @@ After the contract has been deployed, the contract will be found under "Deployed
 * **name** - returns the name of the token.
 * **symbol** - returns the symbol of the token.
 * **decimals** - returns the decimals conversion factor of the token. Typically the value being used is 10^18.
-* **displayOwner** - this custom function and a not imported from the ERC20.sol contract. It returns the address of the owner of the contract. As an alternative you can use Ownable.sol by openzeppelin who also made ERC20. You can refer to this doc by openzeppelin for more information: https://docs.openzeppelin.com/contracts/2.x/access-control
+* **displayOwner** - this is a custom function and a not imported from the ERC20.sol contract. It returns the address of the owner of the contract. As an alternative you can use Ownable.sol by openzeppelin who also made ERC20. You can refer to this doc by openzeppelin for more information: https://docs.openzeppelin.com/contracts/2.x/access-control.
 
 These buttons correspond to each of the functions within the contract.
-The sendLoan, getDebtorBalance, debtorCooldownStatus, and resetCooldown have input fields beside them.
+The approve, burn, mint, transfer, transferFrom, allowance, and balanceOf functions have input fields beside them.
 
 You can interact with contract with the following actions:
 
-#### I - Getting the balance of the creditor
+#### I - Getting the balance of a user given an address
 
-**Steps on getting the balance of the creditor:**
+**Steps on getting the balance of a user given an address:**
 
-1.) Find the "getCreditorBalance" button.
+1.) Find the "balanceOf" button.
 
-2.) Click the "getCreditorBalance" button. The current balance of the creditor will be shown below the button.
+2.) Find the input field beside the "balanceOf" button.
+
+3.) Input the address of the user whose balance you want to be displayed.
+
+3.) Click the "balanceOf". The current balance of the user will be shown below the button.
 
 #### II - Getting the balance of the debtor
 
