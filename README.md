@@ -222,16 +222,14 @@ https://www.loom.com/share/729d20832a7b4f1c824a6c1f79662c21
 ### Compilation failed
 Please check if the code inside the .sol file you created in remix matches the code I provided. If it does not match then please copy the code I provided in its entirety and replace the code in the .sol filed that you created in Remix. If it does match and it still will not compile then please check your internet connection or trying a different browser or updating your current browser. 
 
-### Debtor balance did not increase/Creditor balance did not dencrease after sending loan
-Please make sure that the _debtorId you provided in the input field beside the "sendLoan" button matches the address you provided the input field beside the "getDebtorBalance" button. If both matches there may have been another error such as: 
+### Transferring of tokens from a provided source address and receiving address failed
+If upon checking that you have been indeed provided an allowance but the transferFrom transaction still failed, this could be due to a lack of balance from the person that provided you that allowance. The approve function allows the provision of allowance despite a lack of balance because any transaction that consumes that allowance will fail if the allowance providers balance is less then the allowance being spent. Allowance is merely the maximum amount of tokens you can use from the allowance provider's balance.
 
-The transaction itself failed due to either the debtor being on cooldown.
+### Minting of tokens failed
+You must be the owner of the contract in order to be able to mint tokens. If you are indeed the owner of the contract but the mint transaction still fails, please check your internet connection.
 
-The creditor does not have enough balance for the transaction.
-
-The debtor does not have enough balance for the transaction.
-
-If the above does not help or cover the issue you are having with regards to this Solidity Contract I made then please feel free to reach me at 201812805@fit.edu.ph or voltairedvx@gmail.com and I will try to help you as soon as I can.
+### Burning of tokens failed
+You must have a sufficient balance in order to burn tokens. If your balance is less than the amount of tokens you want to burn then the transaction will fail.
 
 
 ## Authors
