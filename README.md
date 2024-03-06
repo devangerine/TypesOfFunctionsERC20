@@ -231,6 +231,7 @@ You must be the owner of the contract in order to be able to mint tokens. If you
 ### Burning of tokens failed
 You must have a sufficient balance in order to burn tokens. If your balance is less than the amount of tokens you want to burn then the transaction will fail.
 
+If the above does not help you or cover the issue you are having with regards to this Solidity Contract I made then please feel free to reach me at 201812805@fit.edu.ph or voltairedvx@gmail.com and I will try to help you as soon as I can.
 
 ## Authors
 
