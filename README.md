@@ -111,73 +111,55 @@ You can interact with contract with the following actions:
 
 3.) Input the address of the user whose balance you want to be displayed.
 
-3.) Click the "balanceOf". The current balance of the user will be shown below the button.
+3.) Click the "balanceOf" button. The current balance of the user will be shown below the button.
 
-#### II - Getting the balance of the debtor
+#### II - Minting of tokens
 
-Note: getDebtorBalance has the following error handling:
+**Steps on minting of tokens:**
 
-* A require that the _debtorId parameter be only either equal to 0 or 1 because I limited the number of possible debtors to keep this contract as simple as possible. 
+1.) Find the input field beside the "mint" button.
 
-**Steps on getting the balance of the debtor:**
+2.) Input the receiving address followed by the amount of your token to minted separated by a comma e.g.(receiving_address,amount).
 
-1.) Find the input field beside the "getDebtorBalance" button.
+3.) Click the "mint" button. You can confirm if the transaction is a success by checking the balance of the receiving address using the "balanceOf" function.
 
-2.) Input a _debtorId in that input field. The _debtorId must only be either a 0 or a 1. (Refer to the error handling list of this function found above.)
+#### III - Transferring of tokens
 
-3.) Click the "getCreditorBalance" button. The current balance of the creditor will be shown below the button.
+**Steps on transferring of tokens:**
 
-#### III - Getting the debtorOnCooldown status of a debtor
+1.) Find the input field beside the "transfer" button.
 
-Note: debtorOnCooldown has the following error handling:
+2.) Input the receiving address followed by the amount of your token to transfer separated by a comma e.g.(receiving_address,amount).
 
-* A require that the _debtorId parameter be only either equal to 0 or 1 because I limited the number of possible debtors to keep this contract as simple as possible. 
+3.) Click the "transfer" button. You can confirm if the transaction is a success by checking your balance using the "balanceOf" function (Your balance should have decreased by the amount you transferred).
 
-**Steps on getting the debtorOnCooldown status of a debtor:**
+#### IV - Burning of tokens
 
-1.) Find the input field beside the "debtorOnCooldown" button.
+**Steps on burning of tokens:**
 
-2.) Input a _debtorId in that input field. The _debtorId must only be either a 0 or a 1. (Refer to the error handling list of this function found above.)
+1.) Find the input field beside the "burn" button.
 
-3.) Click the "debtorOnCooldown" button. The current debtorOnCooldown status of the debtor associated with the _debtorId you provided will be displayed below. It will be false if the debtor is not cooldown
-otherwise true if the debtor is on cooldown and cannot take a loan.
+2.) Input the amount of tokens you want to burn from your balance.
 
-#### IV - Sending a loan
-Note: sendLoan has the following error handling:
+3.) Click the "burn" button. You can confirm if the transaction is a success by checking your balance using the "balanceOf" function (Your balance should have decreased by the amount you burned).
 
-* An assertion that the transactionFee(state variable of type unsigned integer) is always 10 because under normal operation of the contract the transactionFee does not get changed but the triggerAssert function exists to increment the transactionFee in order to demonstate how assert works which is to throw an error and revert any changes to the state of the contract done before the assertion is executed. 
+#### V - Checking the allowance provided to you
 
-* A require that the _debtorId parameter be only either equal to 0 or 1 because I limited the number of possible debtors to keep this contract as simple as possible.  
+1.) Find the "approve" button.
 
-* A require that the debtorOnCooldown element assocaited with the _debtorId is false which means that the debtor associated with the _debtorId not on loaning cooldown as a result of taking a loan recently.
+2.) Input the spender's address followed by the amount of tokens from your balance you want to give as an allowance separated by a comma e.g(spender_address,amount).
 
-* A revert that gets triggered when the if statement that checks if the creditor's balance is less then the _loanAmount returns true. 
+3.) Click the "approve" button. You can confirm that the transaction was a success by checking your balance using the balanceOf function(your balance should decrease)  or by checking the allowance provided to the spender using the "allowance" function (allowance should be the same amount as you inputted when using the "allowance" function).
 
-* A revert that gets triggered when the if statement that checks if the debtor's balance is less than the transactionFee returns true.
+#### VI - Approving of allowance to be given to a spender
 
-**Steps on sending a loan:**
+**Steps on approving of allowance to be given to a spender:**
 
-**Note: The _debtorId with the value of 1 has 0 balance and will always trigger the revert within tge condtional statement checking that the debtor's balance is greater than the transactionFee.**
+1.) Find the "approve" button.
 
-1.) Find the input field beside the "sendLoan" button.
+2.) Input the spender's address followed by the amount of tokens from your balance you want to give as an allowance separated by a comma e.g(spender_address,amount).
 
-2.) Click the input field beside the "sendLoan" button and input a _loanAmount and a _debtorId seprated by a comma (e.g. 60, 0). The _debtorId must only be either a 0 or a 1.
-
-3.) Click the  the "sendLoan" button to send the _loanAmount to the debtor assocaited with the _debtorId you provided. This will fail if debtor's debtorOnCooldown status is true or both/either the debtor and/or the creditor do not have enough balance for the transaction otherwise the loan will be sent successfully.(Refer to the error handling list of this function found above.) You can verify that the loan was sent by clicking the "getCreditorBalance" button and the "getDebtorBalance" button. Use the _debtorId you used here in "sendLoan" as your input for "getDebtorbalance". After the transaction the debtor assocaited with the _debtorId will be put on coolddown and receive loans unless you reset that cooldown more on that later. 
-
-#### V - Using resetCooldown to reset the debtorOnCooldown status of a debtor
-
-Note: debtorOnCooldownStatus has the following error handling:
-
-* A require that the _debtorId parameter be only either equal to 0 or 1 because I limited the number of possible debtors to keep this contract as simple as possible. 
-
-**Steps on Using resetCooldown to reset the debtorOnCooldown status of a debtor:**
-
-1.) Find the "resetCooldown" button.
-
-2.) Input a _debtorId in that input field. The _debtorId must only be either a 0 or a 1. (Refer to the error handling list of this function found above.)
-
-3.) Click the "resetCooldown" button. The current debtorOnCooldown status of the debtor associated with the _debtorId you provided will be set to false thus allow the debtor to receive a loan. You can verify this change by using the debtorOnCooldown function making sure to input the same _debtorId you inputed in resetCooldown to debtorOnCooldown.
+3.) Click the "approve" button. You can confirm that the transaction was a success by check your balance using the balanceOf function or by checking the allowance provided to the spender using the "allowance" function.
 
 #### VI - Getting the value of the transactionFee using viewTransactionFee
 
