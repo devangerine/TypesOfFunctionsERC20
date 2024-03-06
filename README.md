@@ -161,35 +161,16 @@ You can interact with contract with the following actions:
 
 3.) Click the "approve" button. You can confirm that the transaction was a success by check your balance using the balanceOf function or by checking the allowance provided to the spender using the "allowance" function.
 
-#### VI - Getting the value of the transactionFee using viewTransactionFee
+#### VII - Transferring of tokens from a provided address to a receiving address (Using of allowance)
 
-**Steps on getting the value of the transactionFee:**
+**Steps on transferring of tokens from a provided address to a receiving address (Using of allowance):**
 
-1.) Find the "viewTransactionFee" button.
+1.) Find the "transferFrom" button.
 
-2.) Click the "viewTransactionFee" button. The value of the transactionFee will be found below the button. It should display 10 if the triggerAssert function has not been used.
+2.) Input the address the provided you the allowance followed by the receiving address (the address where you will transfer an amount from the allowance provided to you) then the amount of tokens you want to transfer from the allowance all of which are separated by a comma e.g.(allowance_provider_address,receiving_address,amount).
 
-#### VII - Using triggerAssert
+3.) Click the "transferFrom" button. You can confirm that the transaction was by checking the remaining allowance using the "allowance" function.
 
-The sendLoan function has an assertion that the transactionFee(state variable of type unsigned integer) is always 10 because under normal operation of the contract the transactionFee does not get changed but the triggerAssert function exists to increment the transactionFee in order to demonstate how assert works which is to throw an error and revert any changes to the state of the contract done before the assertion is executed.  
-
-In this case, we will be intentionally triggering it through the use of triggerAssert.
-
-**Steps on getting the value of the transactionFee:**
-
-1.) Find the "triggerAssert" button.
-
-2.) Click the "triggerAssert" button. The value of the transactionFee will be incremented by 1. You can verify the change to the transactionFee variable by clicking the viewTransactionFee button.
-
-3.) Try sending a loan. (Refer to the instructions on how to send a loan found in the IV - Sending a loan section of this readme file.) It should fail and throw an error.
-
-#### VII - Using resetTransactionFee to reset the transactionFee to it's default value of 10
-
-1.) Find the "resetTransactionFee" button.
-
-2.) Click the "triggerAssert" button. The value of the transactionFee will set to it's default value of 10. You can verify the change to the transactionFee variable by clicking the viewTransactionFee button.
-
-3.) Try sending a loan. (Refer to the instructions on how to send a loan found in the IV - Sending a loan section of this readme file.) It should succeed and throw no errors. You can verify this by viewing the balances of the creditor and the debtor you send the loan to by using getCreditorBalance and getDebtorBalance respectively. 
 
 ## Code explanation and Contract usage Video Walkthrough
 Below is the video walkthrough on how to use the contract once you already have it compiled and deployed on the Remix IDE:
