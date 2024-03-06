@@ -101,7 +101,47 @@ The approve, burn, mint, transfer, transferFrom, allowance, and balanceOf functi
 
 You can interact with contract with the following actions:
 
-#### I - Getting the balance of a user given an address
+#### I - Displaying the name of the token
+
+**Steps on displaying the name of the token :**
+
+1.) Find the "name" button.
+
+2.) Click the "name" button. The name of the token will be displayed below the button.
+
+#### II - Displaying the symbol of the token
+
+**Steps on displaying the name of the token :**
+
+1.) Find the "symbol" button.
+
+2.) Click the "symbol" button. The symbol of the token will be displayed below the button.
+
+#### III - Displaying the owner of the token
+
+**Steps on displaying the name of the token :**
+
+1.) Find the "displayOwner" button.
+
+2.) Click the "displayOwner" button. The address of the owner of the contract will be displayed below the button.
+
+#### IV - Displaying the decimal used by the token
+
+**Steps on displaying the name of the token :**
+
+1.) Find the "decimals" button.
+
+2.) Click the "decimals" button. The decimal value used by the token will be displayed below the button.
+
+#### V - Displaying the totalSupply of the token
+
+**Steps on displaying the name of the token :**
+
+1.) Find the "totalSupply" button.
+
+2.) Click the "totalSupply" button. The totalSupply of the token will be displayed below the button.
+
+#### VI - Getting the balance of a user given an address
 
 **Steps on getting the balance of a user given an address:**
 
@@ -113,7 +153,7 @@ You can interact with contract with the following actions:
 
 3.) Click the "balanceOf" button. The current balance of the user will be shown below the button.
 
-#### II - Minting of tokens
+#### VII - Minting of tokens
 
 **Steps on minting of tokens:**
 
@@ -123,7 +163,7 @@ You can interact with contract with the following actions:
 
 3.) Click the "mint" button. You can confirm if the transaction is a success by checking the balance of the receiving address using the "balanceOf" function.
 
-#### III - Transferring of tokens
+#### VIII - Transferring of tokens
 
 **Steps on transferring of tokens:**
 
@@ -133,7 +173,7 @@ You can interact with contract with the following actions:
 
 3.) Click the "transfer" button. You can confirm if the transaction is a success by checking your balance using the "balanceOf" function (Your balance should have decreased by the amount you transferred).
 
-#### IV - Burning of tokens
+#### IX - Burning of tokens
 
 **Steps on burning of tokens:**
 
@@ -143,7 +183,7 @@ You can interact with contract with the following actions:
 
 3.) Click the "burn" button. You can confirm if the transaction is a success by checking your balance using the "balanceOf" function (Your balance should have decreased by the amount you burned).
 
-#### V - Checking the allowance provided to you
+#### X - Checking the allowance provided to you
 
 1.) Find the "approve" button.
 
@@ -151,7 +191,7 @@ You can interact with contract with the following actions:
 
 3.) Click the "approve" button. You can confirm that the transaction was a success by checking your balance using the balanceOf function(your balance should decrease)  or by checking the allowance provided to the spender using the "allowance" function (allowance should be the same amount as you inputted when using the "allowance" function).
 
-#### VI - Approving of allowance to be given to a spender
+#### XI - Approving of allowance to be given to a spender
 
 **Steps on approving of allowance to be given to a spender:**
 
@@ -161,7 +201,7 @@ You can interact with contract with the following actions:
 
 3.) Click the "approve" button. You can confirm that the transaction was a success by check your balance using the balanceOf function or by checking the allowance provided to the spender using the "allowance" function.
 
-#### VII - Transferring of tokens from a provided address to a receiving address (Using of allowance)
+#### XII - Transferring of tokens from a provided address to a receiving address (Using of allowance)
 
 **Steps on transferring of tokens from a provided address to a receiving address (Using of allowance):**
 
