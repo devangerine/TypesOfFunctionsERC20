@@ -214,7 +214,7 @@ You can interact with contract with the following actions:
 
 ## Code explanation and Contract usage Video Walkthrough
 Below is the video walkthrough on how to use the contract once you already have it compiled and deployed on the Remix IDE:
-https://www.loom.com/share/729d20832a7b4f1c824a6c1f79662c21
+https://www.loom.com/share/8e12643c3b48498ab3487ffa4361ca71
 
 
 ## Help
