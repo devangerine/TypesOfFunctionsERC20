@@ -228,6 +228,9 @@ If upon checking that you have been indeed provided an allowance but the transfe
 ### Minting of tokens failed
 You must be the owner of the contract in order to be able to mint tokens. If you are indeed the owner of the contract but the mint transaction still fails, please check your internet connection.
 
+### Transferring of tokens from your account to a specified account failed
+You must have sufficient balance in order to transfer tokens to specified account. If your balance is below the amount of tokens you want to transfer the transaction will fail.
+
 ### Burning of tokens failed
 You must have a sufficient balance in order to burn tokens. If your balance is less than the amount of tokens you want to burn then the transaction will fail.
 
