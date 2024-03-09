@@ -12,7 +12,7 @@ This contract has a modifier called onlyOwner which only allows the contract own
 * **transferFrom** - takes a from-address, a to-address, and an amount of type uint256 that will be transfered to the to-address as arguments. This can only work if the person who owns the from-address or a spender that was give an allowance to spend in their stead calls this function.
 
 * **mint** - takes a receiving address as well an amount of type uint256 to be minted as arguments, mints that amount. The totalSupply is updated as a consequence.
-* **burn** - takes an amount of type uint256 to be burned as an argument and burns that amount of tokens from the function caller's balance.
+* **burn** - takes an amount of type uint256 to be burned as an argument and burns that amount of tokens from the function caller's balance. For this token I have fixed the account address argument to be _msg.sender() in order to prevent users from burning the tokens from someone else's account.
 * **transfer** - takes a to-address and an amount of type uint256 as an argument and transfers that amount of tokens to the to-addressee's balance.
 * **balanceOf** - takes an address as an argument and returns the balance of that address.
 * **totalSupply** - returns the totalSupply of tokens.
@@ -87,7 +87,7 @@ After the contract has been deployed, the contract will be found under "Deployed
 * **transferFrom** - takes a from-address, a to-address, and an amount of type uint256 that will be transfered to the to-address as arguments. This can only work if the person who owns the from-address or a spender that was give an allowance to spend in their stead calls this function.
 
 * **mint** - takes a receiving address as well an amount of type uint256 to be minted as arguments, mints that amount. The totalSupply is updated as a consequence.
-* **burn** - takes an amount of type uint256 to be burned as an argument and burns that amount of tokens from the function caller's balance.
+* **burn** - takes an amount of type uint256 to be burned as an argument and burns that amount of tokens from the function caller's balance. For this token I have fixed the account address argument to be _msg.sender() in order to prevent users from burning the tokens from someone else's account.
 * **transfer** - takes a to-address and an amount of type uint256 as an argument and transfers that amount of tokens to the to-addressee's balance.
 * **balanceOf** - takes an address as an argument and returns the balance of that address.
 * **totalSupply** - returns the totalSupply of tokens.
